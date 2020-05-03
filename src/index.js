@@ -7,8 +7,8 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });
-  socket.on("confetti", (msg) => {
-    io.to(msg.room).emit("confetti");
+  socket.on("action", (msg) => {
+    io.to(msg.room).emit("action", msg);
   });
   socket.on("join", (msg) => {
     console.log(`joining: ${msg}`);
