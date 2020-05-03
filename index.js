@@ -14,5 +14,6 @@ io.on("connection", (socket) => {
 });
 
 http.listen(process.env.PORT || 3000, () => {
+  console.log("Esto no va por que no le da la gana");
   console.log(`listening on port: ${process.env.PORT}`);
 });
