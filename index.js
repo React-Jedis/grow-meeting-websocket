@@ -3,12 +3,12 @@ var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 app.use(cors());
 
-console.log("El console log si que va");
+console.debug("El console log si que va");
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
+  console.debug("a user connected");
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    console.debug("user disconnected");
   });
   socket.on("confeti", (msg) => {
     io.to(msg.room).emit("confeti");
@@ -16,6 +16,6 @@ io.on("connection", (socket) => {
 });
 
 http.listen(process.env.PORT || 3000, () => {
-  console.log("Esto no va por que no le da la gana");
-  console.log(`listening on port: ${process.env.PORT}`);
+  console.debug("Esto no va por que no le da la gana");
+  console.lodebugg(`listening on port: ${process.env.PORT}`);
 });
