@@ -3,6 +3,8 @@ var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 app.use(cors());
 
+console.log("El console log si que va");
+
 io.on("connection", (socket) => {
   console.log("a user connected");
   socket.on("disconnect", () => {
